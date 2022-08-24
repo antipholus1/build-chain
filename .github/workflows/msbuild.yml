@@ -42,6 +42,7 @@ jobs:
       run: |
         ls ${{ github.workspace }}
         ls ${{ github.workspace }}\src
+        ls ${{ github.workspace }}\src\bin
 
     - name: Release
       uses: actions/create-release@v1
