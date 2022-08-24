@@ -25,12 +25,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Setup MSBuild (vswhere-path)
-      id: setup_msbuild_explicit
-      uses: ./
-      with:
-        vswhere-path: C:\ProgramData\chocolatey\bin
-
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
@@ -46,7 +40,6 @@ jobs:
     
     - name: List files in the repository
       run: |
-        echo "vswhere-path: ${{ steps.setup_msbuild_explicit.outputs.msbuildPath }}"
         ls ${{ github.workspace }}
         ls ${{ github.workspace }}\src
         ls ${{ github.workspace }}\src\bin\Release
