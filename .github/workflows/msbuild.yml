@@ -44,7 +44,7 @@ jobs:
         ls ${{ github.workspace }}
         ls ${{ github.workspace }}\src
         ls ${{ github.workspace }}\src\bin\Release
-        powershell.exe -file prebuild.ps1
+        powershell.exe -ExecutionPolicy Unrestricted -command "prebuild.ps1"
 
     - name: Release
       uses: actions/create-release@v1
