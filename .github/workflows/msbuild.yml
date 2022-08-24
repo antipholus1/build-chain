@@ -41,7 +41,7 @@ jobs:
     - name: List files in the repository
       run: |
         ls ${{ github.workspace }}
-        ls ${{ github.workspace }}\sys
+        ls ${{ github.workspace }}\src
 
     - name: Release
       uses: actions/create-release@v1
