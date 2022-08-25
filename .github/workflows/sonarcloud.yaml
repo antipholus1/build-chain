@@ -64,8 +64,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        shell: powershell
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}        
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"antipholus1_build-chain" /o:"antipholus" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           ./msbuild.exe /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
